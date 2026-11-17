@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beautemps · Manual de marca</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Poppins:wght@500;700&display=swap">
+<style>
+:root{--petroleo:#12404F;--petroleo-osc:#0C2F3A;--verde:#5E9B6A;--verde-txt:#3E6F4A;--brote:#A9C7A0;--agua:#E8F1E6;--crema:#F4F1EA;--crema-borde:#E4DFD3;--gris:#5E6A6B;--ambar:#C9892E;--ambar-txt:#8E5E17}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--petroleo);background:var(--crema);font-size:17px;line-height:1.6}
+.latin{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+section{padding:96px 0;border-top:1px solid var(--crema-borde)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-txt);margin:0 0 14px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+h2{font-size:clamp(34px,5vw,56px);margin-bottom:20px}
+h3{font-size:22px;letter-spacing:-.01em;line-height:1.2;margin-bottom:8px}
+.lead{font-size:20px;color:var(--gris);max-width:760px;margin:0 0 40px}
+p{margin:0 0 12px}
+.muted{color:var(--gris)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--crema-borde);border-radius:18px;padding:28px}
+.card.agua{background:var(--agua);border-color:#D3E3CF}
+.card.dark{background:var(--petroleo);border-color:var(--petroleo);color:var(--crema)}
+.card.dark .muted{color:#C9D6D4}
+ul.clean{margin:0;padding-left:20px}
+ul.clean li{margin-bottom:8px}
+.num{font-size:15px;font-weight:800;color:var(--verde-txt)}
+nav.top{position:sticky;top:0;z-index:10;background:rgba(244,241,234,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--crema-borde)}
+nav.top .wrap{display:flex;gap:22px;align-items:center;overflow-x:auto;padding-top:14px;padding-bottom:14px;white-space:nowrap}
+nav.top a{color:var(--petroleo);text-decoration:none;font-size:14px;font-weight:700}
+nav.top a:hover{color:var(--verde-txt)}
+nav.top .marca{font-weight:800;margin-right:8px}
+.hero{background:var(--petroleo);color:var(--crema);padding:120px 0 110px;border:0}
+.hero h1{font-size:clamp(46px,8vw,104px);letter-spacing:-.04em}
+.hero .eyebrow{color:var(--brote)}
+.hero .lead{color:#C9D6D4;margin-top:28px}
+.chip{display:inline-block;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;background:var(--agua);color:#2F5A3B;margin:0 6px 8px 0}
+.chip.on{background:var(--verde);color:#fff}
+table{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--crema-borde)}
+th,td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--crema-borde);vertical-align:top}
+th{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);background:#FBFAF6}
+tr:last-child td{border-bottom:0}
+.tablebox{overflow-x:auto}
+.vs{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:stretch}
+.vs .row{display:contents}
+.vs div.cell{padding:14px 0;border-bottom:1px solid var(--crema-borde);font-weight:600}
+.vs div.arrow{display:flex;align-items:center;justify-content:center;color:var(--verde);font-weight:800;border-bottom:1px solid var(--crema-borde)}
+.vs .hoy{color:var(--gris);font-weight:500}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--crema-borde);background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.swatches{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
+.sw .c{height:120px;border-radius:14px;margin-bottom:10px}
+.sw b{display:block;font-size:15px}
+.sw span{display:block;font-size:13px;color:var(--gris);line-height:1.4}
+.bar{display:flex;height:22px;border-radius:999px;overflow:hidden;margin:28px 0 8px}
+.typebox{background:#fff;border:1px solid var(--crema-borde);border-radius:18px;padding:36px}
+.big-aa{font-size:110px;font-weight:800;line-height:.9;letter-spacing:-.05em}
+.photo{border-radius:16px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;position:relative;overflow:hidden}
+.photo .tag{position:absolute;top:16px;left:16px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.85);color:var(--petroleo);padding:5px 10px;border-radius:999px}
+.photo h3{font-size:19px;margin-bottom:4px}
+.photo p{font-size:14px;margin:0;line-height:1.45}
+.ph1{background:linear-gradient(160deg,#DCE8D8 0%,#A9C7A0 100%)}
+.ph2{background:linear-gradient(160deg,#F4F1EA 0%,#E2D3B8 100%)}
+.ph3{background:linear-gradient(160deg,#D7E3E4 0%,#9FB7BC 100%)}
+.ph4{background:linear-gradient(160deg,#EADCC2 0%,#C9892E 140%)}
+.ph5{background:linear-gradient(160deg,#1C5466 0%,#12404F 100%);color:var(--crema)}
+.ph5 .tag{background:rgba(244,241,234,.9)}
+.ph6{background:linear-gradient(160deg,#E8F1E6 0%,#C5DBBF 100%)}
+.dosdont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.post{aspect-ratio:4/5;border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.post .mini{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.post h4{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1}
+.post-caption{font-size:14px;color:var(--gris);margin-top:10px;line-height:1.45}
+.carousel{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+.carousel .post{flex:0 0 250px;scroll-snap-align:start}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.step{background:#fff;border:1px solid var(--crema-borde);border-radius:16px;padding:22px}
+.step .n{font-size:40px;font-weight:800;color:var(--brote);line-height:1;margin-bottom:10px}
+.timeline{position:relative;margin-top:16px}
+.tl-head{display:grid;grid-template-columns:200px repeat(12,minmax(0,1fr));font-size:12px;font-weight:700;color:var(--gris);margin-bottom:10px}
+.tl-row{display:grid;grid-template-columns:200px repeat(12,minmax(0,1fr));align-items:center;margin-bottom:12px}
+.tl-row .lbl{font-weight:700;font-size:15px;padding-right:12px;line-height:1.3}
+.tl-row .lbl small{display:block;font-weight:500;color:var(--gris);font-size:12.5px}
+.tl-bar{height:38px;border-radius:10px;display:flex;align-items:center;padding:0 12px;font-size:12.5px;font-weight:700;white-space:nowrap;overflow:hidden}
+.week{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.day{background:#fff;border:1px solid var(--crema-borde);border-radius:14px;padding:18px;min-height:150px}
+.day b{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin-bottom:10px}
+.day .slot{border-radius:10px;padding:10px 12px;font-size:14px;font-weight:700;line-height:1.3;margin-bottom:8px}
+.decide li{margin-bottom:14px}
+.check{display:inline-flex;width:22px;height:22px;border-radius:6px;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-right:10px;vertical-align:-4px}
+iframe.anim{display:block;width:100%;aspect-ratio:5/4;border:0;pointer-events:none}
+.minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px}.minis div{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:10px}.minis img{max-width:100%;max-height:100%}
+.lnk{color:var(--verde-txt);font-weight:800;text-decoration:none}
+.card.dark h3{color:var(--crema)}
+footer{background:var(--petroleo);color:#C9D6D4;padding:48px 0;font-size:14px}
+@media (max-width:860px){
+.grid2,.grid3,.posts,.steps,.dosdont{grid-template-columns:1fr}
+.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}
+.week{grid-template-columns:1fr}
+section{padding:68px 0}
+.tl-head,.tl-row{grid-template-columns:120px repeat(12,minmax(0,1fr))}
+.tl-bar{font-size:0;padding:0}
+}
+
+section{border-top:0}section.sub{padding:84px 0}section.sub+section.sub{border-top:1px solid var(--crema-borde)}
+nav.top .wrap{gap:26px}
+.hero2{background:var(--petroleo);color:var(--crema);padding:120px 0 100px}
+.hero2 .brand{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(56px,10vw,128px);letter-spacing:-.02em;line-height:1}
+.hero2 .lab{font-family:Poppins,sans-serif;font-weight:500;letter-spacing:.45em;font-size:clamp(12px,1.5vw,17px);margin-top:12px;color:var(--brote)}
+.hero2 .eyebrow{color:var(--brote)}.hero2 .lead{color:#C9D6D4;margin-top:30px}
+.toc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:46px}
+.toc a{border-top:2px solid rgba(244,241,234,.3);padding-top:12px;color:var(--crema);text-decoration:none;font-weight:700}
+.toc a span{display:block;font-size:13px;color:var(--brote);letter-spacing:.14em;margin-bottom:4px}
+.toc a:hover{border-color:var(--brote)}
+.chap{padding:64px 0 58px}
+.chap .cn{font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin:0 0 12px;padding-bottom:12px;border-bottom:1.5px solid currentColor;display:inline-block;opacity:.75}
+.chap h2{margin:0 0 8px;font-size:clamp(34px,4.6vw,54px)}.chap .cs{margin:0;font-size:18px;opacity:.75}
+.chap.c1{background:var(--agua)}.chap.c2{background:var(--petroleo);color:var(--crema)}.chap.c2 .cn{color:var(--brote);opacity:1}.chap.c3{background:#EADCC2}.chap.c4{background:#DCE3E3}
+.latin{font-weight:400}
+.grp{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin:30px 0 12px}
+.primary{color:var(--crema);border-radius:20px;padding:34px;min-height:220px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.primary b{display:block;font-size:clamp(32px,4vw,46px);letter-spacing:-.03em}
+.primary .hx{font-size:14px;opacity:.8;letter-spacing:.06em}.primary .mn{max-width:360px;font-size:17px;color:#C9D6D4}
+.tiles{display:grid;gap:12px}.tiles.four{grid-template-columns:repeat(4,minmax(0,1fr))}.tiles.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{border-radius:16px;padding:22px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;position:relative}
+.tile b{font-size:21px;letter-spacing:-.01em}.tile .hx{font-size:12.5px;opacity:.8;line-height:1.4}.tile .mn{font-size:14px;line-height:1.35}
+.tile .tg,.combo .tg{position:absolute;top:16px;left:22px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.pbar{display:flex;height:56px;border-radius:14px;overflow:hidden;border:1.5px solid #D9D3C4}
+.plab{display:flex;margin-top:8px;font-size:12.5px;font-weight:700;color:var(--gris)}.plab span{padding-right:6px}
+.combo{position:relative;border-radius:18px;padding:60px 28px 28px;display:flex;flex-direction:column;gap:6px}.combo b{font-size:28px;letter-spacing:-.02em}
+.roots{display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:center;margin-top:20px}
+.roots .way{display:flex;flex-direction:column;align-items:center;gap:14px;background:#fff;border:1px solid var(--crema-borde);border-radius:22px;padding:34px;text-decoration:none;color:var(--petroleo);font-weight:800;font-size:18px}
+.roots .way.dk{background:var(--petroleo);color:var(--crema);border-color:var(--petroleo)}
+.roots .way img{height:110px}.roots .way em{font-size:24px}
+.roots .old{text-align:center;color:var(--gris);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.roots .old img{width:150px;border-radius:50%;display:block;margin:0 auto 8px}
+.cam-b{background:var(--petroleo);color:var(--crema)}.cam-b .eyebrow{color:var(--brote)}.cam-b .lead{color:#C9D6D4}.cam-b .muted{color:#C9D6D4}
+.cam-b .lgrid .lg{border-color:rgba(244,241,234,.15)}.cam-b .lnk{color:var(--brote)}.cam-b .facts div{border-color:rgba(244,241,234,.25)}.cam-b .facts b{color:var(--brote)}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.agrid figure{margin:0}.agrid .af{border-radius:20px;overflow:hidden;box-shadow:0 14px 40px rgba(18,64,79,.12)}.agrid iframe{display:block;width:100%;aspect-ratio:5/4;border:0;pointer-events:none}.agrid figcaption{font-size:14px;font-weight:700;margin-top:8px}.cam-b .agrid .af{box-shadow:0 0 0 1px rgba(244,241,234,.15)}
+.stage{margin-top:26px;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(18,64,79,.12)}
+.stage iframe{display:block;width:100%;aspect-ratio:16/9;border:0;pointer-events:none}
+.concept{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;margin-top:34px;align-items:start}
+.facts{display:grid;gap:12px}.facts div{border-top:1.5px solid var(--crema-borde);padding-top:10px;font-size:15px}.facts b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-txt);margin-bottom:2px}
+.h3{font-size:22px;margin:48px 0 14px}
+.lgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.lgrid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.lgrid figure{margin:0}.lgrid .lg{background:#fff;border:1px solid var(--crema-borde);border-radius:16px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:28px}
+.lgrid img{max-width:100%;max-height:100%}.lgrid figcaption{font-size:14px;font-weight:700;margin-top:8px}
+.lnk{color:var(--verde-txt);font-weight:800;text-decoration:none}
+@media(max-width:860px){.toc{grid-template-columns:1fr 1fr}.tiles.four{grid-template-columns:1fr 1fr}.tiles.three{grid-template-columns:1fr 1fr 1fr}.tiles.three .tile{padding:14px;min-height:170px}.tiles.three .tile b{font-size:16px}.tiles.three .mn{display:none}
+.plab span:nth-child(n+4){visibility:hidden}.roots{grid-template-columns:1fr 1fr}.roots .old{display:none}.roots .way{padding:20px}.roots .way img{height:70px}.concept{grid-template-columns:1fr;gap:20px}.agrid{grid-template-columns:1fr}.lgrid{grid-template-columns:1fr 1fr}.lgrid.four{grid-template-columns:1fr 1fr}.lgrid .lg{padding:16px}}
+
+.phones{display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:40px;justify-content:center;margin:30px 0 20px}
+.phone{margin:0}.phone .scr{background:#fff;border:10px solid #111;border-radius:42px;overflow:hidden;box-shadow:0 30px 70px rgba(18,64,79,.18);padding-top:18px}
+.phone figcaption{text-align:center;font-weight:800;margin-top:14px;font-size:17px}.phone figcaption em{font-weight:400;font-size:21px}
+.ig-top{display:flex;justify-content:space-between;padding:4px 14px 10px;font-size:15px;color:#111}
+.ig-prof{display:flex;gap:12px;align-items:center;padding:0 14px}.ig-prof .av{width:64px;height:64px;border-radius:50%;background:#F4F1EA;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px #e5e5e5;flex:none}.ig-prof .av img{width:62%}
+.ig-prof b{display:block;font-size:13.5px;color:#111}.ig-prof span{font-size:12px;color:#777}
+.ig-bio{font-size:12px;line-height:1.4;color:#222;padding:8px 14px 0;margin:0}.ig-bio .latin{font-size:13px;color:#3E6F4A}
+.ig-btn{display:flex;gap:6px;padding:10px 14px}.ig-btn span{flex:1;text-align:center;background:#efefef;border-radius:8px;font-size:12px;font-weight:700;padding:7px;color:#111}.ig-btn .on{background:#12404F;color:#fff}
+.ig-hl{display:flex;gap:12px;padding:2px 14px 12px}.ig-hl span{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10.5px;color:#111}.ig-hl i{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #fff,0 0 0 3px #ddd}.ig-hl svg{width:50%}
+.wk{display:grid;grid-template-columns:repeat(3,1fr);max-width:760px;margin:18px auto 0;border-top:1.5px solid #12404F}.wk span{padding:10px 8px 0;font-size:13px;color:#5E6A6B}.wk b{display:block;color:#12404F;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.ig-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.p{position:relative;min-width:0;min-height:0;aspect-ratio:4/5;overflow:hidden;display:flex;flex-direction:column;background-size:cover;background-position:center;font-family:Manrope,sans-serif}
+.p span,.p b,.p i{display:block}
+.p.ty{padding:11px 10px 12px;justify-content:flex-start}
+.p .k{font-size:6.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.p .num{color:inherit!important;font-size:36px;font-weight:800;letter-spacing:-.05em;line-height:.9;margin-top:auto}
+.p .t{font-size:11.5px;font-weight:800;letter-spacing:-.02em;line-height:1.12;margin-top:5px;padding-right:16px}
+.p.ty .k + .t{margin-top:auto}
+.p .t.q{font-size:15px;margin-top:auto!important}
+.p .s{font-size:8px;margin-top:6px;opacity:.85}
+.p .mk{position:absolute;right:8px;bottom:9px;width:14px}
+.p .fi{position:absolute;top:7px;right:7px;width:12px;height:12px;z-index:2}
+.p.ph::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(12,47,58,.6))}
+.p .fb{position:absolute;left:10px;right:10px;bottom:10px;z-index:1;color:#fff}
+.p .fb .k{font-size:6px;opacity:.85;margin-bottom:2px}
+.p .fb b{font-size:11px;font-weight:800;line-height:1.15}.p .fb i{font-size:9.5px;opacity:.9}
+.p.launch{align-items:center;justify-content:center;text-align:center}
+.p.launch .iso{width:42%;margin-bottom:10px}.p.launch .t{padding:0;font-size:10.5px;margin:0}
+@media(max-width:860px){.phones{grid-template-columns:1fr;gap:34px}.phone .scr{max-width:340px;margin:0 auto}}
+</style></head><body>
+<nav class="top"><div class="wrap"><span class="marca">Beautemps</span><a href="#cap1">1 · Punto de partida</a><a href="#cap2">2 · Identidad visual</a><a href="#paleta">Paleta</a><a href="#tipografia">Tipografía</a><a href="#logo">Logo</a><a href="#cap3">3 · Comunicación</a><a href="#cap4">4 · Contexto y plan</a></div></nav><header class="hero2"><div class="wrap"><p class="eyebrow">Manual de marca</p><div class="brand">Beautemps</div><div class="lab">LABORATORIOS</div>
+<p class="lead">Un laboratorio de 140 años, con imagen de hoy. El nombre, el negocio y la esencia se mantienen: cambia cómo se ve y cómo se cuenta.</p>
+<div class="toc"><a href="#cap1"><span>01</span>Punto de partida</a><a href="#cap2"><span>02</span>Identidad visual</a><a href="#cap3"><span>03</span>Comunicación</a><a href="#cap4"><span>04</span>Contexto y plan</a></div></div></header><header class="chap c1" id="cap1"><div class="wrap"><p class="cn">Capítulo 01</p><h2>Punto de partida</h2><p class="cs">Dónde está la marca hoy y hacia dónde va.</p></div></header><section id="diagnostico" class="sub"><div class="wrap">
+<p class="eyebrow">1.1 · Diagnóstico</p>
+<h2>La marca tiene activos muy fuertes, pero la imagen no los comunica.</h2>
+<p class="lead">Hoy Beautemps se ve antigua y genérica, cuando en realidad es el primer laboratorio del país habilitado para elaborar IFA vegetales.</p>
+<div class="grid2">
+<div>
+<div class="grid2" style="gap:14px">
+<div><div class="shot"><img src="img/logo-actual.jpg" alt="Logo actual de Laboratorios Beautemps: hoja verde y gota celeste con brillos"></div><p class="muted" style="font-size:13px;margin-top:8px">Logo actual</p></div>
+<div><div class="shot"><img src="img/feed-actual.jpg" alt="Grilla actual de Instagram con plantas en marcos verdes"></div><p class="muted" style="font-size:13px;margin-top:8px">Feed actual</p></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:18px">
+<div class="card"><h3>Logo</h3><p class="muted" style="margin:0">La idea de hoja + gota es correcta, pero los brillos y degradés la hacen ver anticuada. El verde saturado con celeste se lee como "producto natural", no como "laboratorio". En el avatar casi no se lee.</p></div>
+<div class="card"><h3>Instagram</h3><p class="muted" style="margin:0">La grilla repite siempre el mismo formato: marco verde, foto de stock y nombre en mayúsculas. Muestra plantas pero no explica qué es una tintura madre, cómo se elabora ni por qué elegir a Beautemps.</p></div>
+<div class="card agua"><h3>Lo que hay que rescatar</h3><ul class="clean"><li>Más de 140 años de trayectoria</li><li>Primer laboratorio habilitado por ANMAT para IFA vegetales</li><li>Calidad farmacéutica y dirección técnica profesional</li><li>El claim "De la planta, a la esencia"</li></ul></div>
+</div>
+</div>
+</div></section><section id="norte" class="sub"><div class="wrap">
+<p class="eyebrow">1.2 · El norte del cambio</p>
+<h2>Que Beautemps se vea como lo que es.</h2>
+<p class="lead">Un proveedor experto en insumos vegetales, con la tradición como respaldo y no como estética.</p>
+<div class="grid2">
+<div>
+<div class="vs">
+<div class="cell hoy" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700">Hoy transmite</div><div class="arrow"></div><div class="cell" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--verde-txt)">Hacia dónde va</div>
+<div class="cell hoy">Herboristería tradicional</div><div class="arrow">→</div><div class="cell">Laboratorio farmacéutico moderno</div>
+<div class="cell hoy">Producto natural genérico</div><div class="arrow">→</div><div class="cell">Proveedor experto en insumos</div>
+<div class="cell hoy">Antigüedad</div><div class="arrow">→</div><div class="cell">Trayectoria que da seguridad</div>
+<div class="cell hoy">Catálogo de plantas</div><div class="arrow">→</div><div class="cell">Conocimiento que informa</div>
+<div class="cell hoy">Recargado, con brillos</div><div class="arrow">→</div><div class="cell">Limpio, claro, transparente</div>
+</div>
+</div>
+<div class="card dark">
+<p class="eyebrow" style="color:var(--brote)">Cinco atributos en cada pieza</p>
+<ol style="margin:0;padding-left:22px;font-size:18px">
+<li style="margin-bottom:10px"><b>Confianza</b> <span class="muted">· el cliente apoya su producto en el insumo de Beautemps</span></li>
+<li style="margin-bottom:10px"><b>Seguridad</b> <span class="muted">· procesos controlados y habilitados</span></li>
+<li style="margin-bottom:10px"><b>Transparencia</b> <span class="muted">· se muestra cómo se elabora y de dónde viene cada planta</span></li>
+<li style="margin-bottom:10px"><b>Trayectoria</b> <span class="muted">· 140 años de saber hacer</span></li>
+<li><b>Modernidad</b> <span class="muted">· una marca a la altura de sus clientes</span></li>
+</ol>
+</div>
+</div>
+</div></section><header class="chap c2" id="cap2"><div class="wrap"><p class="cn">Capítulo 02</p><h2>Identidad visual</h2><p class="cs">Paleta, tipografía y logo.</p></div></header><section id="paleta" class="sub"><div class="wrap">
+<p class="eyebrow">2.1 · Paleta de colores</p>
+<h2>Azul que da confianza. <span class="latin">Verde y crema que dan luz.</span></h2>
+<p class="lead">El azul petróleo es el color de identidad. La luz la ponen la base crema y los verdes, para que la marca se vea fresca y nunca fría. El ámbar aparece poco: es la esencia.</p>
+<p class="grp">Color principal</p>
+<div class="primary" style="background:#12404F"><div><b>Azul petróleo</b><span class="hx">#12404F · RGB 18 · 64 · 79</span></div><span class="mn">Confianza, rigor y seguridad. Lleva a Beautemps al mundo laboratorio.</span></div>
+<p class="grp">Verdes · el origen vegetal</p>
+<div class="tiles four"><div class="tile" style="background:#5E9B6A;color:#fff"><b>Verde luz</b><span class="hx">#5E9B6A<br>RGB 94 · 155 · 106</span><span class="mn">Vida, energía, origen vegetal</span></div><div class="tile" style="background:#3E6F4A;color:#fff"><b>Verde texto</b><span class="hx">#3E6F4A<br>RGB 62 · 111 · 74</span><span class="mn">Textos y detalles sobre claros</span></div><div class="tile" style="background:#A9C7A0;color:#12404F"><b>Verde brote</b><span class="hx">#A9C7A0<br>RGB 169 · 199 · 160</span><span class="mn">Frescura, contraste sobre azul</span></div><div class="tile" style="background:#E8F1E6;color:#12404F;box-shadow:inset 0 0 0 1px rgba(18,64,79,.12)"><b>Verde agua</b><span class="hx">#E8F1E6<br>RGB 232 · 241 · 230</span><span class="mn">Luz y calma, fondo alternativo</span></div></div>
+<p class="grp">Neutros y acento · la luz, la precisión y la esencia</p>
+<div class="tiles three"><div class="tile" style="background:#F4F1EA;color:#12404F;box-shadow:inset 0 0 0 1px rgba(18,64,79,.12)"><span class=tg>Neutro</span><b>Crema tiza</b><span class="hx">#F4F1EA<br>RGB 244 · 241 · 234</span><span class="mn">Calidez y pureza. La base</span></div><div class="tile" style="background:#5E6A6B;color:#fff"><span class=tg>Neutro</span><b>Gris piedra</b><span class="hx">#5E6A6B<br>RGB 94 · 106 · 107</span><span class="mn">Precisión, texto de apoyo</span></div><div class="tile" style="background:#C9892E;color:#fff"><span class=tg>Acento</span><b>Ámbar</b><span class="hx">#C9892E<br>RGB 201 · 137 · 46</span><span class="mn">La esencia: el color real de la tintura</span></div></div>
+<p class="grp" style="margin-top:44px">Proporción de uso</p>
+<div class="pbar"><i style="flex:45;background:#F4F1EA"></i><i style="flex:25;background:#12404F"></i><i style="flex:20;background:linear-gradient(90deg,#5E9B6A,#A9C7A0)"></i><i style="flex:5;background:#5E6A6B"></i><i style="flex:5;background:#C9892E"></i></div>
+<div class="plab"><span style="flex:45">Crema y claros · 45%</span><span style="flex:25">Petróleo · 25%</span><span style="flex:20">Verdes · 20%</span><span style="flex:5">5%</span><span style="flex:5">5%</span></div>
+<div class="grid2" style="margin-top:34px">
+<div class="combo" style="background:#F4F1EA;color:#12404F;box-shadow:inset 0 0 0 1px var(--crema-borde)"><span class="tg">Uso principal</span><b>Petróleo sobre crema</b><span>Elegante y luminoso. Para la mayoría de las piezas.</span></div>
+<div class="combo" style="background:#12404F;color:#F4F1EA"><span class="tg" style="color:#A9C7A0">Golpe de impacto</span><b>Crema sobre petróleo</b><span style="color:#C9D6D4">Para portadas y datos clave.</span></div>
+</div>
+</div></section><section id="tipografia" class="sub"><div class="wrap">
+<p class="eyebrow">2.2 · Tipografía</p>
+<h2>Una sans moderna para hablar claro. Una itálica botánica para el nombre de cada planta.</h2>
+<p class="lead">Tres familias, cada una con un rol. La combinación transmite rigor técnico sin perder lo vegetal ni la trayectoria.</p>
+<div class="grid3">
+<div class="typebox">
+<p class="eyebrow">Logo · Poppins</p>
+<div class="big-aa" style="font-family:Poppins,sans-serif;font-weight:700;letter-spacing:-.03em">Aa</div>
+<p style="font-family:Poppins,sans-serif;font-size:30px;font-weight:700;line-height:1.1;margin:22px 0 10px">beautemps</p>
+<p class="muted">Bold y Medium. Solo para la marca: el logo y LABORATORIOS.</p>
+</div>
+<div class="typebox">
+<p class="eyebrow">Principal · Manrope</p>
+<div class="big-aa">Aa</div>
+<p style="font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:22px 0 10px">De la planta, a la esencia.</p>
+<p class="muted">Títulos, textos, datos y web. Moderna y cálida, muy legible en pantalla y en chico.</p>
+</div>
+<div class="typebox" style="background:var(--agua);border-color:#D3E3CF">
+<p class="eyebrow">Acento · Instrument Serif itálica</p>
+<div class="big-aa latin" style="font-weight:400">Aa</div>
+<p class="latin" style="font-size:34px;line-height:1.1;margin:22px 0 10px;color:var(--verde-txt)">Calendula officinalis</p>
+<p class="muted">Solo para nombres científicos, citas y detalles. Remite a los herbarios, en dosis justas.</p>
+</div>
+</div>
+</div></section><section id="logo" class="sub"><div class="wrap">
+<p class="eyebrow">2.3 · Logo</p>
+<h2>Dos caminos, <span class="latin">una misma raíz.</span></h2>
+<p class="lead">El logo de siempre ya tenía la idea: una hoja y una gota. La propuesta toma cada una y la vuelve protagonista. Se presentan los dos caminos completos para elegir uno.</p>
+<div class="roots"><a href="#camino-hoja" class="way"><img src="logos/hoja-isotipo-color.png" alt=""><span>Camino A · <em class="latin">La hoja</em></span></a><div class="old"><img src="img/logo-actual.jpg" alt="Logo actual"><span>Hoy</span></div><a href="#camino-gota" class="way dk"><img src="logos/gota-isotipo-negativo.png" alt=""><span>Camino B · <em class="latin">La gota</em></span></a></div>
+</div></section><section id="camino-hoja" class="sub cam-a"><div class="wrap">
+<p class="eyebrow">2.3.A · Camino A</p>
+<h2>La <span class="latin">hoja</span></h2>
+<p class="grp" style="margin-top:22px">La marca en movimiento</p><div class="agrid"><figure><div class="af"><iframe src="hoja-anim.html?mode=below&amp;theme=color&amp;play=1&amp;crop=1" title="Animación Apilado"></iframe></div><figcaption>Apilado</figcaption></figure><figure><div class="af"><iframe src="hoja-anim.html?mode=circle&amp;theme=color&amp;play=1&amp;crop=1" title="Animación Sello"></iframe></div><figcaption>Sello</figcaption></figure><figure><div class="af"><iframe src="hoja-anim.html?mode=type&amp;theme=neg&amp;play=1&amp;crop=1" title="Animación Tipeo"></iframe></div><figcaption>Tipeo</figcaption></figure><figure><div class="af"><iframe src="hoja-anim.html?mode=side&amp;theme=color&amp;play=1&amp;crop=1" title="Animación Horizontal"></iframe></div><figcaption>Horizontal</figcaption></figure></div>
+<div class="concept"><p class="lead" style="margin:0">"beautemps" se disuelve y la <b>e</b> crece como una hoja. La marca nace de la planta: la materia prima de todo lo que elabora Beautemps.</p><div class="facts"><div><b>Símbolo</b>La "e" convertida en hoja</div><div><b>Lectura</b>El nombre sigue leyéndose entero</div><div><b>Movimiento</b>La hoja crece desde la letra</div></div></div>
+<h3 class="h3">Versiones</h3><div class="lgrid"><figure><div class="lg"><img src="logos/hoja-sello-circulo-color.png" alt="Sello"></div><figcaption>Sello</figcaption></figure><figure><div class="lg"><img src="logos/hoja-apilado-color.png" alt="Apilado"></div><figcaption>Apilado</figcaption></figure><figure><div class="lg"><img src="logos/hoja-apilado-nombre-color.png" alt="Apilado con nombre"></div><figcaption>Apilado con nombre</figcaption></figure><figure><div class="lg"><img src="logos/hoja-horizontal-color.png" alt="Horizontal"></div><figcaption>Horizontal</figcaption></figure><figure><div class="lg"><img src="logos/hoja-isotipo-color.png" alt="Isotipo"></div><figcaption>Isotipo</figcaption></figure><figure><div class="lg"><img src="logos/hoja-logotipo-hoja-color.png" alt="Logotipo"></div><figcaption>Logotipo</figcaption></figure></div>
+<h3 class="h3">Color</h3><div class="lgrid four"><figure><div class="lg" style="background:#F4F1EA"><img src="logos/hoja-apilado-color.png" alt="Color"></div><figcaption>Color</figcaption></figure><figure><div class="lg" style="background:#12404F"><img src="logos/hoja-apilado-negativo.png" alt="Negativo"></div><figcaption>Negativo</figcaption></figure><figure><div class="lg" style="background:#fff"><img src="logos/hoja-apilado-una-tinta-petroleo.png" alt="Una tinta petróleo"></div><figcaption>Una tinta petróleo</figcaption></figure><figure><div class="lg" style="background:linear-gradient(150deg,#3E6F4A,#12404F)"><img src="logos/hoja-apilado-una-tinta-blanco.png" alt="Una tinta blanco"></div><figcaption>Una tinta blanco</figcaption></figure></div>
+<h3 class="h3">En la mano</h3><div class="shot"><img src="img/tarjetas-hoja.jpg" alt="Tarjetas camino A"></div>
+<p style="margin-top:22px"><a class="lnk" href="https://beautemps-sistema-logo.vercel.app" target="_blank" rel="noopener">Área de respeto, tamaños mínimos y usos incorrectos ↗</a></p>
+</div></section><section id="camino-gota" class="sub cam-b"><div class="wrap">
+<p class="eyebrow">2.3.B · Camino B</p>
+<h2>La <span class="latin">gota</span></h2>
+<p class="grp" style="margin-top:22px">La marca en movimiento</p><div class="agrid"><figure><div class="af"><iframe src="gota-anim.html?end=ring&amp;theme=color&amp;crop=1" title="Animación Sello"></iframe></div><figcaption>Sello</figcaption></figure><figure><div class="af"><iframe src="gota-anim.html?end=solo&amp;theme=color&amp;crop=1" title="Animación Gota"></iframe></div><figcaption>Gota</figcaption></figure><figure><div class="af"><iframe src="gota-anim.html?end=ring&amp;theme=neg&amp;crop=1" title="Animación Sello en negativo"></iframe></div><figcaption>Sello en negativo</figcaption></figure><figure><div class="af"><iframe src="gota-anim.html?end=solo&amp;theme=neg&amp;crop=1" title="Animación Gota en negativo"></iframe></div><figcaption>Gota en negativo</figcaption></figure></div>
+<div class="concept"><p class="lead" style="margin:0">La <b>b</b> y la <b>p</b> del nombre se funden en una gota: la tintura madre. La marca nace del producto, de lo que Beautemps elabora.</p><div class="facts"><div><b>Símbolo</b>Una gota con reflejo de costado</div><div><b>Lectura</b>Nace de la b y la p del nombre</div><div><b>Movimiento</b>Las letras se funden en la gota</div></div></div>
+<h3 class="h3">Versiones</h3><div class="lgrid"><figure><div class="lg"><img src="logos/gota-sello-color.png" alt="Sello"></div><figcaption>Sello</figcaption></figure><figure><div class="lg"><img src="logos/gota-apilado-color.png" alt="Apilado"></div><figcaption>Apilado</figcaption></figure><figure><div class="lg"><img src="logos/gota-monograma-color.png" alt="Monograma"></div><figcaption>Monograma</figcaption></figure><figure><div class="lg"><img src="logos/gota-horizontal-color.png" alt="Horizontal"></div><figcaption>Horizontal</figcaption></figure><figure><div class="lg"><img src="logos/gota-isotipo-color.png" alt="Isotipo"></div><figcaption>Isotipo</figcaption></figure><figure><div class="lg"><img src="logos/gota-logotipo-color.png" alt="Logotipo"></div><figcaption>Logotipo</figcaption></figure></div>
+<h3 class="h3">Color</h3><div class="lgrid four"><figure><div class="lg" style="background:#F4F1EA"><img src="logos/gota-apilado-color.png" alt="Color"></div><figcaption>Color</figcaption></figure><figure><div class="lg" style="background:#12404F"><img src="logos/gota-apilado-negativo.png" alt="Negativo"></div><figcaption>Negativo</figcaption></figure><figure><div class="lg" style="background:#fff"><img src="logos/gota-apilado-una-tinta-petroleo.png" alt="Una tinta petróleo"></div><figcaption>Una tinta petróleo</figcaption></figure><figure><div class="lg" style="background:linear-gradient(150deg,#3E6F4A,#12404F)"><img src="logos/gota-apilado-una-tinta-blanco.png" alt="Una tinta blanco"></div><figcaption>Una tinta blanco</figcaption></figure></div>
+<h3 class="h3">En la mano</h3><div class="shot"><img src="img/tarjetas-gota.jpg" alt="Tarjetas camino B"></div>
+<p style="margin-top:22px"><a class="lnk" href="https://beautemps-sistema-gota.vercel.app" target="_blank" rel="noopener">Área de respeto, tamaños mínimos y usos incorrectos ↗</a></p>
+</div></section><header class="chap c3" id="cap3"><div class="wrap"><p class="cn">Capítulo 03</p><h2>Comunicación</h2><p class="cs">Cómo se ve y cómo habla la marca.</p></div></header><section id="imagen" class="sub"><div class="wrap">
+<p class="eyebrow">3.1 · Dirección de imagen</p>
+<h2>Laboratorio real, plantas reales, luz natural.</h2>
+<p class="lead">Las fotos le dan vida a todo. Combinan el mundo laboratorio con el origen vegetal, y siempre muestran algo verdadero de Beautemps. Las tarjetas describen cada tipo de foto a producir.</p>
+<div class="grid3">
+<div class="photo ph1"><span class="tag">Origen</span><h3>La planta viva</h3><p>Macro de hojas, flores y raíces. Fondo limpio, luz natural, mucho detalle.</p></div>
+<div class="photo ph2"><span class="tag">Materia prima</span><h3>La planta seca</h3><p>Hierbas secas y molidas sobre mesada clara, como insumo listo para procesar.</p></div>
+<div class="photo ph3"><span class="tag">Laboratorio</span><h3>Proceso</h3><p>Maceración, filtrado, probetas y balanzas. Manos con guantes, encuadres cerrados.</p></div>
+<div class="photo ph4"><span class="tag">La esencia</span><h3>El extracto</h3><p>La tintura a contraluz, en vidrio. Su color ámbar real es el protagonista.</p></div>
+<div class="photo ph5"><span class="tag">Personas</span><h3>El equipo</h3><p>La directora técnica y el equipo trabajando. Le pone cara a la confianza.</p></div>
+<div class="photo ph6"><span class="tag">Escala</span><h3>Producción</h3><p>Lotes, rótulos, depósito y despacho. Muestra que se trabaja por cantidad.</p></div>
+</div>
+<div class="dosdont">
+<div class="card"><h3 style="color:var(--verde-txt)">Sí</h3><ul class="clean"><li>Fotos propias del laboratorio y de las plantas que procesan</li><li>Luz natural, fondos limpios, encuadres cercanos</li><li>Texto grande que acompaña a la foto, no la tapa</li></ul></div>
+<div class="card"><h3 style="color:var(--ambar-txt)">No</h3><ul class="clean"><li>Fotos de stock genéricas de flores</li><li>Marcos verdes y logos en cajas blancas sobre la foto</li><li>Carteles gigantes que solo dicen "Tinturas madre"</li></ul></div>
+</div>
+</div></section><section id="instagram" class="sub"><div class="wrap">
+<p class="eyebrow">3.2 · El nuevo Instagram</p>
+<h2>No es todo plantas: es contar, informar, mostrar y transmitir.</h2>
+<p class="lead">El Instagram pasa de catálogo a vidriera del conocimiento de Beautemps. En lugar de anunciar "Tinturas madre", explica qué es una tintura madre, de dónde sale y por qué confiar en quien la elabora.</p>
+
+<h3 style="font-size:26px;margin:8px 0 6px">Así se vería</h3><p class="muted" style="max-width:720px">La primera fila queda fija: quién es el laboratorio (trayectoria, qué hace y ANMAT). Debajo, las publicaciones de las primeras semanas, de la más nueva a la más vieja. El proceso se cuenta en partes, empezando por la selección, y entre paso y paso se intercalan plantas y temas para clientes. Las fotos son de referencia hasta tener las propias del laboratorio.</p><div class="phones"><figure class="phone"><div class="scr"><div class="ig-top"><b>laboratoriosbeautemps</b><span>&#9776;</span></div><div class="ig-prof"><div class="av"><img src="logos/hoja-isotipo-color.png" alt=""></div><div><b>Laboratorios Beautemps</b><span>Proveedor de insumos vegetales</span></div></div><p class="ig-bio">Primer laboratorio habilitado por ANMAT para IFA vegetales. Tinturas madre y extractos para la industria.<br><i class="latin">De la planta, a la esencia.</i></p><div class="ig-btn"><span class="on">Seguir</span><span>Mensaje</span><span>Cotizá</span></div><div class="ig-hl"><span><i style="background:#12404F"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3M7.5 15h9" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Proceso</span><span><i style="background:#5E9B6A"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14zM5 19l7-7" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Plantas</span><span><i style="background:#3E6F4A"><svg viewBox="0 0 24 24"><path d="M8 3h8v3l2 2v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V8l2-2zM6 12h12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Clientes</span><span><i style="background:#C9892E"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4zM9 10.5h6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Cotizá</span></div><div class="ig-grid"><div class="pinned p ty" style="background:#12404F;color:#F4F1EA"><svg class="fi" viewBox="0 0 24 24"><path d="M9 3h6l-1 6 4 4v2h-5v6l-1 1-1-1v-6H5v-2l4-4z" fill="#fff"/></svg><span class="k" style="color:#A9C7A0">Trayectoria</span><span class="num">140</span><span class="t">años elaborando extractos vegetales</span><img class="mk" src="logos/hoja-isotipo-negativo.png" alt=""></div><div class="pinned p ph" style="background-image:url(img/ig/calseca.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><path d="M9 3h6l-1 6 4 4v2h-5v6l-1 1-1-1v-6H5v-2l4-4z" fill="#fff"/></svg><span class="fb"><span class="k">Qué hacemos</span><b>Tinturas madre y extractos para la industria</b></span></div><div class="pinned p ty" style="background:#F4F1EA;color:#12404F"><svg class="fi" viewBox="0 0 24 24"><path d="M9 3h6l-1 6 4 4v2h-5v6l-1 1-1-1v-6H5v-2l4-4z" fill="#12404F"/></svg><span class="k" style="color:#3E6F4A">Confianza</span><span class="t">Primer laboratorio habilitado por ANMAT para IFA vegetales.</span><img class="mk" src="logos/hoja-isotipo-color.png" alt=""></div><div class="p ph" style="background-image:url(img/ig/carqueja.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="fb"><span class="k">Ficha botánica</span><b>Carqueja</b><i class="latin">Baccharis trimera</i></span></div><div class="p ty" style="background:#5E9B6A;color:#fff"><span class="k" style="color:#fff">Para la industria</span><span class="t">Por litro, a granel y con trazabilidad por lote.</span><img class="mk" src="logos/hoja-isotipo-una-tinta-blanco.png" alt=""></div><div class="p ph" style="background-image:url(img/ig/granel.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="fb"><span class="k">El proceso · 02</span><b>La preparación</b></span></div><div class="p ty" style="background:#E8F1E6;color:#12404F"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#12404F" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#12404F" stroke-width="2"/></svg><span class="k" style="color:#3E6F4A">Tintura madre</span><span class="t q">¿Qué es una tintura madre?</span><span class="s">Deslizá →</span><img class="mk" src="logos/hoja-isotipo-color.png" alt=""></div><div class="p ph" style="background-image:url(img/ig/calendula.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="fb"><span class="k">Ficha botánica</span><b>Caléndula</b><i class="latin">Calendula officinalis</i></span></div><div class="p ty" style="background:#12404F;color:#F4F1EA"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="k" style="color:#A9C7A0">El proceso</span><span class="num">01</span><span class="t">La selección. Te contamos cómo elegimos cada planta.</span><img class="mk" src="logos/hoja-isotipo-negativo.png" alt=""></div></div></div><figcaption>Camino A · <em class="latin">La hoja</em></figcaption></figure><figure class="phone"><div class="scr"><div class="ig-top"><b>laboratoriosbeautemps</b><span>&#9776;</span></div><div class="ig-prof"><div class="av"><img src="logos/gota-isotipo-color.png" alt=""></div><div><b>Laboratorios Beautemps</b><span>Proveedor de insumos vegetales</span></div></div><p class="ig-bio">Primer laboratorio habilitado por ANMAT para IFA vegetales. Tinturas madre y extractos para la industria.<br><i class="latin">De la planta, a la esencia.</i></p><div class="ig-btn"><span class="on">Seguir</span><span>Mensaje</span><span>Cotizá</span></div><div class="ig-hl"><span><i style="background:#12404F"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3M7.5 15h9" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Proceso</span><span><i style="background:#5E9B6A"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14zM5 19l7-7" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Plantas</span><span><i style="background:#3E6F4A"><svg viewBox="0 0 24 24"><path d="M8 3h8v3l2 2v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V8l2-2zM6 12h12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Clientes</span><span><i style="background:#C9892E"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4zM9 10.5h6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Cotizá</span></div><div class="ig-grid"><div class="pinned p ty" style="background:#12404F;color:#F4F1EA"><svg class="fi" viewBox="0 0 24 24"><path d="M9 3h6l-1 6 4 4v2h-5v6l-1 1-1-1v-6H5v-2l4-4z" fill="#fff"/></svg><span class="k" style="color:#A9C7A0">Trayectoria</span><span class="num">140</span><span class="t">años elaborando extractos vegetales</span><img class="mk" src="logos/gota-isotipo-negativo.png" alt=""></div><div class="pinned p ph" style="background-image:url(img/ig/calseca.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><path d="M9 3h6l-1 6 4 4v2h-5v6l-1 1-1-1v-6H5v-2l4-4z" fill="#fff"/></svg><span class="fb"><span class="k">Qué hacemos</span><b>Tinturas madre y extractos para la industria</b></span></div><div class="pinned p ty" style="background:#F4F1EA;color:#12404F"><svg class="fi" viewBox="0 0 24 24"><path d="M9 3h6l-1 6 4 4v2h-5v6l-1 1-1-1v-6H5v-2l4-4z" fill="#12404F"/></svg><span class="k" style="color:#3E6F4A">Confianza</span><span class="t">Primer laboratorio habilitado por ANMAT para IFA vegetales.</span><img class="mk" src="logos/gota-isotipo-color.png" alt=""></div><div class="p ph" style="background-image:url(img/ig/carqueja.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="fb"><span class="k">Ficha botánica</span><b>Carqueja</b><i class="latin">Baccharis trimera</i></span></div><div class="p ty" style="background:#5E9B6A;color:#fff"><span class="k" style="color:#fff">Para la industria</span><span class="t">Por litro, a granel y con trazabilidad por lote.</span><img class="mk" src="logos/gota-isotipo-una-tinta-blanco.png" alt=""></div><div class="p ph" style="background-image:url(img/ig/granel.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="fb"><span class="k">El proceso · 02</span><b>La preparación</b></span></div><div class="p ty" style="background:#E8F1E6;color:#12404F"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#12404F" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#12404F" stroke-width="2"/></svg><span class="k" style="color:#3E6F4A">Tintura madre</span><span class="t q">¿Qué es una tintura madre?</span><span class="s">Deslizá →</span><img class="mk" src="logos/gota-isotipo-color.png" alt=""></div><div class="p ph" style="background-image:url(img/ig/calendula.jpg);background-position:center"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="fb"><span class="k">Ficha botánica</span><b>Caléndula</b><i class="latin">Calendula officinalis</i></span></div><div class="p ty" style="background:#12404F;color:#F4F1EA"><svg class="fi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="#fff" stroke-width="2"/></svg><span class="k" style="color:#A9C7A0">El proceso</span><span class="num">01</span><span class="t">La selección. Te contamos cómo elegimos cada planta.</span><img class="mk" src="logos/gota-isotipo-negativo.png" alt=""></div></div></div><figcaption>Camino B · <em class="latin">La gota</em></figcaption></figure></div><h3 style="font-size:26px;margin:56px 0 18px">Seis pilares de contenido</h3>
+<div class="grid3" style="margin-bottom:56px">
+<div class="card"><p class="num">01</p><h3>Qué es una tintura madre</h3><p class="muted" style="margin:0">Definición, usos y diferencias con extractos fluidos y glicólicos.</p></div>
+<div class="card"><p class="num">02</p><h3>El proceso</h3><p class="muted" style="margin:0">De la planta a la esencia, paso a paso, en el laboratorio.</p></div>
+<div class="card"><p class="num">03</p><h3>Fichas botánicas</h3><p class="muted" style="margin:0">Cada planta: nombre científico, parte usada, propiedades y qué se extrae.</p></div>
+<div class="card"><p class="num">04</p><h3>Confianza</h3><p class="muted" style="margin:0">Habilitación ANMAT, trayectoria, trazabilidad y dirección técnica.</p></div>
+<div class="card"><p class="num">05</p><h3>Para clientes</h3><p class="muted" style="margin:0">Industrias, compras por cantidad, desarrollos a medida, cotizaciones.</p></div>
+<div class="card"><p class="num">06</p><h3>Detrás de escena</h3><p class="muted" style="margin:0">El equipo, la historia y el día a día del laboratorio.</p></div>
+</div>
+
+<h3 style="font-size:26px;margin-bottom:6px">Carrusel ejemplo: cómo se elabora una tintura madre</h3>
+<p class="muted" style="margin-bottom:18px">Deslizá para ver las 6 placas. Los pasos son generales y hay que validarlos con la dirección técnica.</p>
+<div class="carousel" aria-label="Carrusel de ejemplo sobre el proceso de elaboración">
+<div class="post" style="background:var(--petroleo);color:var(--crema)"><span class="mini" style="color:var(--brote)">Laboratorios Beautemps</span><h4 style="font-size:36px">¿Cómo se hace una tintura madre?</h4><span class="mini" style="color:var(--brote)">Deslizá →</span></div>
+<div class="post" style="background:var(--agua)"><span class="mini" style="color:var(--verde-txt)">Paso 1</span><h4 style="font-size:30px">Selección de la planta</h4><p style="font-size:14px;margin:0;color:#2F5A3B">Se identifica cada especie y se controla su origen y calidad antes de entrar al laboratorio.</p></div>
+<div class="post" style="background:var(--crema);border:1px solid var(--crema-borde)"><span class="mini" style="color:var(--verde-txt)">Paso 2</span><h4 style="font-size:30px">Preparación</h4><p style="font-size:14px;margin:0;color:var(--gris)">La planta, fresca o seca, se limpia y se fragmenta para liberar sus componentes.</p></div>
+<div class="post" style="background:var(--agua)"><span class="mini" style="color:var(--verde-txt)">Paso 3</span><h4 style="font-size:30px">Maceración</h4><p style="font-size:14px;margin:0;color:#2F5A3B">Reposa en una solución hidroalcohólica durante un tiempo controlado. Ahí se extrae la esencia.</p></div>
+<div class="post" style="background:var(--crema);border:1px solid var(--crema-borde)"><span class="mini" style="color:var(--verde-txt)">Paso 4</span><h4 style="font-size:30px">Filtrado y control</h4><p style="font-size:14px;margin:0;color:var(--gris)">Se prensa, se filtra y se analiza cada lote para garantizar calidad farmacéutica.</p></div>
+<div class="post" style="background:var(--petroleo);color:var(--crema)"><span class="mini" style="color:var(--brote)">Paso 5</span><h4 style="font-size:30px">Lista para tu producto</h4><p style="font-size:14px;margin:0;color:#C9D6D4">Envasada a granel y con trazabilidad por lote. <span style="color:var(--ambar);font-weight:700">Pedí tu cotización.</span></p></div>
+</div>
+
+<h3 style="font-size:26px;margin:56px 0 18px">Otros formatos</h3>
+<div class="posts">
+<div><div class="post" style="background:var(--agua)"><span class="mini" style="color:var(--verde-txt)">Ficha botánica</span><div><h4 style="font-size:42px">Caléndula</h4><p class="latin" style="font-size:20px;margin:6px 0 0;color:var(--verde-txt)">Calendula officinalis</p></div><div style="font-size:13px;border-top:1px solid var(--brote);padding-top:12px"><div style="display:flex;justify-content:space-between"><span class="muted">Parte usada</span><b>Flor</b></div><div style="display:flex;justify-content:space-between"><span class="muted">Formatos</span><b>[A CONFIRMAR]</b></div></div></div><p class="post-caption">Una placa por planta: nombre, parte usada, propiedades y qué se extrae. Con foto real en las placas siguientes.</p></div>
+<div><div class="post" style="background:var(--petroleo);color:var(--crema)"><span class="mini" style="color:var(--brote)">Confianza</span><div><h4 style="font-size:120px;letter-spacing:-.06em">140</h4><p style="font-size:19px;font-weight:700;margin:6px 0 0;color:var(--brote);line-height:1.25">años elaborando extractos vegetales.</p></div><span class="mini" style="color:var(--ambar)">Habilitación ANMAT · IFA vegetales</span></div><p class="post-caption">Un dato fuerte como protagonista, en tipografía gigante. Para portadas y fechas clave.</p></div>
+<div><div class="post" style="background:var(--crema);border:1px solid var(--crema-borde)"><span class="mini" style="color:var(--verde-txt)">Para clientes</span><h4 style="font-size:34px">¿Elaborás cosmética, suplementos o fitoterapia?</h4><p style="font-size:14px;margin:0;color:var(--gris)">Te proveemos el insumo vegetal, por cantidad y con trazabilidad.</p></div><p class="post-caption">Le habla directo al cliente B2B y lo lleva a cotizar.</p></div>
+</div>
+
+<div class="grid2" style="margin-top:48px">
+<div class="card"><h3>Cambios en el perfil</h3><ul class="clean muted"><li>Avatar: solo el isotipo nuevo, legible en el círculo</li><li>Bio: abrir con "Primer laboratorio habilitado por ANMAT para IFA vegetales" y cambiar la categoría "Empresa médica"</li><li>Destacadas: Proceso, Plantas, Clientes y Cotizá</li><li>Fijados: trayectoria, qué hace el laboratorio y habilitación ANMAT</li></ul></div>
+<div class="card"><h3>Ritmo del feed</h3><ul class="clean muted"><li>Alternar carruseles tipográficos, fotos reales y reels</li><li>Reels cortos del proceso con texto en movimiento</li><li>Nunca dos placas iguales seguidas</li></ul></div>
+</div>
+</div></section><header class="chap c4" id="cap4"><div class="wrap"><p class="cn">Capítulo 04</p><h2>Contexto y plan</h2><p class="cs">El mercado, los tiempos y lo que hay que aprobar.</p></div></header><section id="competencia" class="sub"><div class="wrap">
+<p class="eyebrow">4.1 · Competencia</p>
+<h2>Todos dicen lo mismo. Nadie se ve moderno.</h2>
+<p class="lead">Calidad, trazabilidad y experiencia son promesas de todo el rubro. Lo que solo Beautemps puede decir es su pionerismo regulatorio y su especialización en tinturas madre.</p>
+<div class="tablebox"><table>
+<tr><th>Laboratorio</th><th>Qué ofrece</th><th>Cómo se presenta</th><th>Lo que lo distingue</th></tr>
+<tr><td><b>Laboratorio Basel</b><br><span class="muted">Lanús</span></td><td>Extractos botánicos, ingredientes fitoquímicos y producto terminado</td><td>Tono internacional y sustentable</td><td>35+ años, exporta a 15+ países</td></tr>
+<tr><td><b>Proyar</b><br><span class="muted">Córdoba</span></td><td>Extractos glicólicos, hidroglicéricos y secos</td><td>Catálogo técnico, foco cosmética</td><td>20+ años, ISO 9001:2015</td></tr>
+<tr><td><b>Vasana</b><br><span class="muted">Villa Martelli</span></td><td>Extractos para cosmética (Extraplant) y perfumería</td><td>Empresa de fragancias con línea de extractos</td><td>Desde 1971</td></tr>
+<tr><td><b>Droguería Argentina</b><br><span class="muted">Lanús</span></td><td>Tinturas madre en frasco de 60 ml</td><td>Venta al público</td><td>Producto final: más cliente que competidor</td></tr>
+</table></div>
+<div class="grid3" style="margin-top:28px">
+<div class="card"><p class="num">Referente internacional</p><h3>Indena · Italia, 1921</h3><p class="muted" style="margin:0">Su lema "Science is our Nature" resume el equilibrio que buscamos: ciencia y naturaleza en la misma frase.</p></div>
+<div class="card"><p class="num">Referente internacional</p><h3>MartinBauer · Alemania</h3><p class="muted" style="margin:0">Usa su historia familiar como relato, no como estética antigua. Tiene filial en Argentina.</p></div>
+<div class="card agua"><p class="num">Cómo nos diferenciamos</p><ul class="clean" style="font-size:15px"><li>Pioneros regulatorios como titular</li><li>Especialistas en tinturas madre</li><li>La trayectoria más larga</li><li>Educar: nadie explica el proceso</li><li>La única identidad contemporánea</li></ul></div>
+</div>
+</div></section><section id="cronograma" class="sub"><div class="wrap">
+<p class="eyebrow">4.2 · Cronograma</p>
+<h2>Doce semanas desde la aprobación.</h2>
+<p class="lead">Una propuesta por etapas, para ajustar juntos. El rediseño del sistema interno va por un camino aparte.</p>
+<div class="tablebox"><div class="timeline" style="min-width:760px">
+<div class="tl-head"><span></span><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span><span>S9</span><span>S10</span><span>S11</span><span>S12</span></div>
+<div class="tl-row"><div class="lbl">Estrategia<small>Diagnóstico, norte, paleta</small></div><div class="tl-bar" style="grid-column:2 / span 2;background:var(--petroleo);color:var(--crema)">En curso</div></div>
+<div class="tl-row"><div class="lbl">Identidad<small>Tipografía, logo, isotipo Labea</small></div><div class="tl-bar" style="grid-column:4 / span 3;background:var(--verde);color:#fff">Logo y sistema</div></div>
+<div class="tl-row"><div class="lbl">Manual de marca<small>Reglas de uso y aplicaciones</small></div><div class="tl-bar" style="grid-column:6 / span 2;background:var(--brote);color:var(--petroleo)">Manual</div></div>
+<div class="tl-row"><div class="lbl">Fotos<small>Sesión en el laboratorio</small></div><div class="tl-bar" style="grid-column:6 / span 2;background:#E2D3B8;color:var(--petroleo)">Producción</div></div>
+<div class="tl-row"><div class="lbl">Instagram<small>Plantillas, perfil, relanzamiento</small></div><div class="tl-bar" style="grid-column:8 / span 2;background:var(--ambar);color:#fff">Relanzamiento</div></div>
+<div class="tl-row"><div class="lbl">Web<small>Rediseño con la nueva identidad</small></div><div class="tl-bar" style="grid-column:9 / span 4;background:var(--agua);color:var(--petroleo);border:1px solid #D3E3CF">Rediseño web</div></div>
+</div></div>
+
+<h3 style="font-size:26px;margin:56px 0 18px">Una semana tipo en Instagram</h3>
+<div class="week">
+<div class="day"><b>Lunes</b><div class="slot" style="background:var(--agua);color:#2F5A3B">Ficha botánica<br><span style="font-weight:500">Carrusel</span></div></div>
+<div class="day"><b>Martes</b><div class="slot" style="background:var(--crema);color:var(--gris)">Historias<br><span style="font-weight:500">Detrás de escena</span></div></div>
+<div class="day"><b>Miércoles</b><div class="slot" style="background:var(--petroleo);color:var(--crema)">Proceso / educativo<br><span style="font-weight:500">Reel o carrusel</span></div></div>
+<div class="day"><b>Jueves</b><div class="slot" style="background:var(--crema);color:var(--gris)">Historias<br><span style="font-weight:500">Preguntas y respuestas</span></div></div>
+<div class="day"><b>Viernes</b><div class="slot" style="background:#F3E4C8;color:var(--ambar-txt)">Confianza o clientes<br><span style="font-weight:500">Post de dato fuerte</span></div></div>
+</div>
+</div></section><section id="aprobar" class="sub"><div class="wrap">
+<p class="eyebrow">4.3 · Para aprobar</p>
+<h2>Qué necesitamos definir ahora.</h2>
+<div class="grid2">
+<ul class="clean decide" style="list-style:none;padding:0;font-size:18px">
+<li><span class="check" style="background:var(--verde);color:#fff">✓</span>Paleta: azul petróleo + verdes + crema tiza</li>
+<li><span class="check" style="background:var(--verde);color:#fff">✓</span>Tipografía: Poppins + Manrope + Instrument Serif itálica</li>
+<li><span class="check" style="background:var(--agua);color:var(--verde-txt);border:1px solid var(--brote)"></span>Logo: elegir camino A (la hoja) o B (la gota)</li>
+<li><span class="check" style="background:var(--agua);color:var(--verde-txt);border:1px solid var(--brote)"></span>Dirección de imagen y sesión de fotos</li>
+<li><span class="check" style="background:var(--agua);color:var(--verde-txt);border:1px solid var(--brote)"></span>Pilares del nuevo Instagram</li>
+<li><span class="check" style="background:var(--agua);color:var(--verde-txt);border:1px solid var(--brote)"></span>Cronograma de 12 semanas</li>
+</ul>
+<div class="card dark"><p class="eyebrow" style="color:var(--brote)">Próximo paso</p><h3 style="font-size:30px;color:var(--crema)">Elegir el camino del logo.</h3><p class="muted" style="margin:0">Con el camino elegido cerramos el manual completo y pasamos a la web, el Instagram y las etiquetas.</p></div>
+</div>
+</div></section>
+<footer><div class="wrap">Manual de marca · Laboratorios Beautemps · Preparado por NATIABRIL Ideas Digitales · Noviembre 2026</div></footer>
+</body></html>
