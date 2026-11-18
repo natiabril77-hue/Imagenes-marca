@@ -11,6 +11,32 @@
 <path id="circle" fill="none" stroke-width="4" stroke-linecap="round"/>
 </svg>
 <script>
+// ---- Sonido (se activa con el botón; los navegadores no permiten sonar solo) ----
+window.SOUND=function(events){
+ let ctx=null,on=false,prev=-1,out=null;
+ const b=document.createElement('button');b.setAttribute('aria-label','Activar sonido');
+ b.style.cssText='position:fixed;right:4%;bottom:5%;width:clamp(30px,9vw,46px);height:clamp(30px,9vw,46px);border-radius:50%;border:0;cursor:pointer;background:rgba(18,64,79,.82);display:flex;align-items:center;justify-content:center;padding:0;z-index:9;box-shadow:0 0 0 1px rgba(244,241,234,.35)';
+ const ic=m=>`<svg viewBox="0 0 24 24" width="55%" height="55%" fill="none" stroke="#F4F1EA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="#F4F1EA"/>${m?'<path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/>':'<path d="M16 9.5l5 5M21 9.5l-5 5"/>'}</svg>`;
+ b.innerHTML=ic(false);document.body.appendChild(b);
+ function init(){ctx=new (window.AudioContext||window.webkitAudioContext)();out=ctx.createGain();out.gain.value=.9;
+  const dry=ctx.createGain(),wet=ctx.createGain(),cv=ctx.createConvolver(),n=ctx.sampleRate*1.8,ir=ctx.createBuffer(2,n,ctx.sampleRate);
+  for(let c=0;c<2;c++){const d=ir.getChannelData(c);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3);}
+  cv.buffer=ir;wet.gain.value=.28;out.connect(dry);out.connect(cv);cv.connect(wet);dry.connect(ctx.destination);wet.connect(ctx.destination);}
+ b.onclick=()=>{on=!on;if(on&&!ctx)init();if(ctx)ctx.resume();b.innerHTML=ic(on);b.setAttribute('aria-label',on?'Silenciar':'Activar sonido');if(on){window.T0=performance.now();prev=-1;}};
+ const S={
+  tone(f,t,d,g,type='sine',f2){const o=ctx.createOscillator(),a=ctx.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d*.35);a.gain.setValueAtTime(0,t);a.gain.linearRampToValueAtTime(g,t+.006);a.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(a);a.connect(out);o.start(t);o.stop(t+d+.05);},
+  air(t,d,g,f1,f2){const n=ctx.createBuffer(1,ctx.sampleRate*d,ctx.sampleRate),x=n.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=Math.random()*2-1;
+   const s=ctx.createBufferSource(),bp=ctx.createBiquadFilter(),a=ctx.createGain();s.buffer=n;bp.type='bandpass';bp.Q.value=.9;bp.frequency.setValueAtTime(f1,t);bp.frequency.exponentialRampToValueAtTime(f2,t+d);
+   a.gain.setValueAtTime(0,t);a.gain.linearRampToValueAtTime(g,t+d*.6);a.gain.linearRampToValueAtTime(0,t+d);s.connect(bp);bp.connect(a);a.connect(out);s.start(t);},
+  plic(t){S.tone(1500,t,.16,.55,'sine',480);S.tone(700,t+.085,.14,.18,'sine',1250);S.tone(520,t+.02,.7,.05);},
+  brote(t){S.tone(659.3,t,1.4,.22,'triangle');S.tone(1318.5,t,.9,.06);S.tone(1975.5,t+.01,.6,.03);},
+  cierre(t){S.tone(987.8,t,1.6,.13,'triangle');S.tone(1975.5,t,1,.03);},
+  brillo(t){S.tone(2637,t,.35,.05);S.tone(3951,t+.04,.25,.025);}
+ };
+ return function(tc){if(!on||!ctx){prev=tc;return;}if(tc<prev)prev=-1;const now=ctx.currentTime;
+  events.forEach(([at,fn,...a])=>{if(prev<at&&at<=tc)S[fn](now,...a);});prev=tc;};
+};
+
 const NS='http://www.w3.org/2000/svg',Q=new URLSearchParams(location.search);
 const MODE=Q.get('mode')||'circle',BG=Q.get('bg')!=='0',PLAY=Q.get('play')==='1';
 const TH={color:{bg:'#F4F1EA',b:'#12404F',leaf:'#5E9B6A',lab:'#12404F',ring:'#12404F'},
@@ -70,6 +96,6 @@ function render(t){
 }
 Promise.race([Promise.all([document.fonts.load('700 150px Poppins'),document.fonts.load('500 34px Poppins')]),new Promise(r=>setTimeout(r,1500))]).then(()=>{setup();
  if(!PLAY){$('s').setAttribute('viewBox',(VB[MODE]||[0,0,1080,1920]).join(' '));render(7);}
- else{if(Q.get('crop'))$('s').setAttribute('viewBox',Q.get('crop')==='w'?'0 610 1080 608':'40 560 1000 800');const t0=performance.now();setInterval(()=>render(Math.min(((performance.now()-t0)/1000)%7.5,6.5)),33);}
+ else{if(Q.get('crop'))$('s').setAttribute('viewBox',Q.get('crop')==='w'?'0 610 1080 608':'40 560 1000 800');window.T0=performance.now();const SND=SOUND(MODE==='type'?[[1.15,'air',1.9,.22,350,2600],[2.45,'brote'],[4.2,'air',1.2,.08,1200,3200],[5.4,'cierre']]:MODE==='circle'?[[1.15,'air',1.9,.22,350,2600],[2.45,'brote'],[4.1,'air',1.1,.07,900,2400],[5.05,'cierre']]:[[1.15,'air',1.9,.22,350,2600],[2.45,'brote'],[3.95,'cierre']]);setInterval(()=>{const tc=((performance.now()-T0)/1000)%7.5;SND(tc);render(Math.min(tc,6.5));},33);}
  window.READY=true;});
 </script></body></html>
