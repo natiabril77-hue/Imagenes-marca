@@ -16,19 +16,19 @@ window.SOUND=function(events){
  b.style.cssText='position:fixed;right:4%;bottom:5%;width:clamp(30px,9vw,46px);height:clamp(30px,9vw,46px);border-radius:50%;border:0;cursor:pointer;background:rgba(18,64,79,.82);display:flex;align-items:center;justify-content:center;padding:0;z-index:9;box-shadow:0 0 0 1px rgba(244,241,234,.35)';
  const ic=m=>`<svg viewBox="0 0 24 24" width="55%" height="55%" fill="none" stroke="#F4F1EA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="#F4F1EA"/>${m?'<path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/>':'<path d="M16 9.5l5 5M21 9.5l-5 5"/>'}</svg>`;
  b.innerHTML=ic(false);document.body.appendChild(b);
- function init(){ctx=new (window.AudioContext||window.webkitAudioContext)();out=ctx.createGain();out.gain.value=.9;
+ function init(){ctx=new (window.AudioContext||window.webkitAudioContext)();out=ctx.createGain();out.gain.value=.55;
   const dry=ctx.createGain(),wet=ctx.createGain(),cv=ctx.createConvolver(),n=ctx.sampleRate*1.8,ir=ctx.createBuffer(2,n,ctx.sampleRate);
   for(let c=0;c<2;c++){const d=ir.getChannelData(c);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3);}
   cv.buffer=ir;wet.gain.value=.28;out.connect(dry);out.connect(cv);cv.connect(wet);dry.connect(ctx.destination);wet.connect(ctx.destination);}
  b.onclick=()=>{on=!on;if(on&&!ctx)init();if(ctx)ctx.resume();b.innerHTML=ic(on);b.setAttribute('aria-label',on?'Silenciar':'Activar sonido');if(on){window.T0=performance.now();prev=-1;}};
  const S={
   tone(f,t,d,g,type='sine',f2){const o=ctx.createOscillator(),a=ctx.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d*.35);a.gain.setValueAtTime(0,t);a.gain.linearRampToValueAtTime(g,t+.006);a.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(a);a.connect(out);o.start(t);o.stop(t+d+.05);},
-  air(t,d,g,f1,f2){const n=ctx.createBuffer(1,ctx.sampleRate*d,ctx.sampleRate),x=n.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=Math.random()*2-1;
-   const s=ctx.createBufferSource(),bp=ctx.createBiquadFilter(),a=ctx.createGain();s.buffer=n;bp.type='bandpass';bp.Q.value=.9;bp.frequency.setValueAtTime(f1,t);bp.frequency.exponentialRampToValueAtTime(f2,t+d);
-   a.gain.setValueAtTime(0,t);a.gain.linearRampToValueAtTime(g,t+d*.6);a.gain.linearRampToValueAtTime(0,t+d);s.connect(bp);bp.connect(a);a.connect(out);s.start(t);},
-  plic(t){S.tone(1500,t,.16,.55,'sine',480);S.tone(700,t+.085,.14,.18,'sine',1250);S.tone(520,t+.02,.7,.05);},
-  brote(t){S.tone(659.3,t,1.4,.22,'triangle');S.tone(1318.5,t,.9,.06);S.tone(1975.5,t+.01,.6,.03);},
-  cierre(t){S.tone(987.8,t,1.6,.13,'triangle');S.tone(1975.5,t,1,.03);},
+  air(t,d,g,f1,f2){g*=.3;f1=Math.max(f1,900)*1.4;f2=Math.max(f2,1800)*1.3;d*=.8;const n=ctx.createBuffer(1,ctx.sampleRate*d,ctx.sampleRate),x=n.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=Math.random()*2-1;
+   const s=ctx.createBufferSource(),bp=ctx.createBiquadFilter(),a=ctx.createGain();s.buffer=n;bp.type='bandpass';bp.Q.value=2.2;bp.frequency.setValueAtTime(f1,t);bp.frequency.exponentialRampToValueAtTime(f2,t+d);
+   a.gain.setValueAtTime(0,t);a.gain.setTargetAtTime(g,t,d*.25);a.gain.setTargetAtTime(0,t+d*.55,d*.15);s.connect(bp);bp.connect(a);a.connect(out);s.start(t);},
+  plic(t){S.tone(1500,t,.16,.38,'sine',480);S.tone(700,t+.085,.14,.12,'sine',1250);S.tone(520,t+.02,.7,.05);},
+  brote(t){S.tone(659.3,t,1.4,.15,'sine');S.tone(1318.5,t,.9,.06);S.tone(1975.5,t+.01,.6,.03);},
+  cierre(t){S.tone(987.8,t,1.6,.09,'sine');S.tone(1975.5,t,1,.03);},
   brillo(t){S.tone(2637,t,.35,.05);S.tone(3951,t+.04,.25,.025);}
  };
  return function(tc){if(!on||!ctx){prev=tc;return;}if(tc<prev)prev=-1;const now=ctx.currentTime;
